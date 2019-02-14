@@ -37,7 +37,7 @@ def bit_rshift(x, y, mask=0xFFFF):
 bit_dict = {"AND": bit_and, "OR": bit_or, "LSHIFT": bit_lshift, "RSHIFT": bit_rshift}
 
 
-with open('input7.txt') as file:
+with open('input7_2.txt') as file:
     data = [tuple(line.split()) for line in file]
 
 
