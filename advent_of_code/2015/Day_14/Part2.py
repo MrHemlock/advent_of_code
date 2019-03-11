@@ -1,0 +1,34 @@
+import numpy as np
+
+deer = {}
+MAX_SECONDS = 2503
+deer_totals = np.zeros((9,))
+deer_scores = np.zeros((9,))
+distances = []
+
+
+with open("input14.txt") as file:
+    raw_data = [line.strip().split() for line in file.readlines()]
+
+
+for line in raw_data:
+    name = line[0]
+    speed = int(line[3])
+    speed_time = int(line[6])
+    rest_time = int(line[-2])
+    deer[name] = {"speed": speed, "speed_time": speed_time, "rest_time": rest_time}
+
+for flyer in deer.values():
+    distance = []
+    while len(distance) < MAX_SECONDS:
+        distance += [flyer["speed"] for _ in range(flyer["speed_time"])]
+        distance += [0 for _ in range(flyer["rest_time"])]
+    distances.append(distance[:MAX_SECONDS])
+
+distance_array = np.array(distances)
+
+for i in range(MAX_SECONDS):
+    deer_totals += distance_array[..., i]
+    deer_scores += deer_totals == deer_totals.max()
+
+print(deer_scores.max())
