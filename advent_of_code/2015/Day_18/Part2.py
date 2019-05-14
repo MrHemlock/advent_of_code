@@ -29,7 +29,7 @@ def light_logic(lights):
                 elif j == (len(row) - 1):
                     group = lights[i - 1][j - 1:j + 1] + [lights[i][j - 1]] + lights[i + 1][j - 1:j + 1]
                 else:
-                    group = lights[i-1][j - 1:j + 2] + lights[i][j - 1:j + 2:2] + lights[i + 1][j - 1:j + 2]
+                    group = lights[i - 1][j - 1:j + 2] + lights[i][j - 1:j + 2:2] + lights[i + 1][j - 1:j + 2]
 
             if light == "#":
                 if group.count("#") in (2, 3):
