@@ -7,7 +7,7 @@ nice_total = 0
 with open("input5.txt") as file:
     for line in file:
         if any(line.count(dub) >= 2 for dub in DOUBLE_LETTERS):
-            if any(line.count(let * 3) == 1 for let in ascii_lowercase):
+            if any(line.count(let * 3) == 1 and line.count(let * 2) == 2 for let in ascii_lowercase):
                 continue
         else:
             continue
@@ -16,6 +16,3 @@ with open("input5.txt") as file:
             nice_total += 1
 
 print(nice_total)
-
-
-# TODO: This solution should not work, it needs to be fixed.
