@@ -30,7 +30,7 @@ for order in clean_data:
     else:
         with np.nditer(
                 lights[order[1][0]:order[2][0] + 1, order[1][1]:order[2][1] + 1],
-                op_flags=['readwrite']
+                op_flags=['writeonly']
         ) as it:
             for x in it:
                 x[...] = not x

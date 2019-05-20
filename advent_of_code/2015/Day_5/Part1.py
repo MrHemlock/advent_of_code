@@ -9,8 +9,8 @@ with open("input5.txt") as file:
     for line in file:
         if any(bad in line for bad in NAUGHTY_COMBOS):
             continue
-        if sum(line.count(let) for let in VOWELS) < 3:
+        elif sum(line.count(let) for let in VOWELS) < 3:
             continue
-        if any(good in line for good in letter_doubles):
+        elif any(good in line for good in letter_doubles):
             nice_total += 1
 print(nice_total)

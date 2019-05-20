@@ -16,3 +16,6 @@ with open("input5.txt") as file:
             nice_total += 1
 
 print(nice_total)
+
+
+# TODO: This solution should not work, it needs to be fixed.

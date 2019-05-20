@@ -29,8 +29,6 @@ numbers = np.array([[int(x) for x in group[2:-1:2]] for group in data], dtype=np
 for group in amounts():
     numbers_copy = np.copy(numbers)
     for i, (pair) in enumerate(zip(numbers_copy, group)):
-        # print(pair)
-        # print(pair[0] * pair[1])
         numbers_copy[i] = pair[0] * pair[1]
 
     summed = []
@@ -42,10 +40,4 @@ for group in amounts():
     score = product(summed)
     if score > best:
         best = score
-    print(score)
-    # print(numbers_copy)
 print(best)
-
-# for pair in zip(numbers_array, test):
-#     print(pair)
-#     print(pair[0] * pair[1])
