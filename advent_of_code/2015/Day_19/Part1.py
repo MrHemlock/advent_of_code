@@ -19,3 +19,4 @@ for i, let in enumerate(base):
         for swap in combos[base[i:i+2]]:
             molecules.update([f"{base[:i]}{swap}{base[i+2:]}"])
 print(len(molecules))
+print(combos)
