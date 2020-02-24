@@ -21,7 +21,7 @@ for index in range(len(ascii_lowercase)-2):
 
 while True:
 
-    print(data)
+    # print(data)
 
     for i in range(len(data)-2):
         if data[i:i+3] in straights:
