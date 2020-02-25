@@ -1,6 +1,5 @@
 from input_getter import get_input
 
-
 wires = [set(), set()]
 
 get_input(3)
@@ -28,6 +27,7 @@ for wire, directions in zip(wires, data):
         wire.update(coords)
 
 wire_crossing = wires[0].intersection(wires[1])
+print(len(wire_crossing))
 
 distances = [abs(j) + abs(k) for (j, k) in wire_crossing]
 
