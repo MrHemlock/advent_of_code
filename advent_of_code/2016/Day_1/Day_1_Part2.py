@@ -1,34 +1,36 @@
-with open("Day_1_input.csv") as file:
+with open("Day_1_input.txt") as file:
 	parsed = file.read().strip().split(", ")
 
 x = 0
 y = 0
-coords = set()
+coords = set((0,0))
 facing = 0
-directions = [0, 0, 0, 0]
+finished = False
 for step in parsed:
 	if step[0] == "R":
 		facing = (facing + 1) % 4
 	else:
 		facing = (facing - 1) % 4
 
-	directions[facing] += int(step[1:])
+	for _ in range(int(step[1:])):
+		match facing:
+			case 0:
+				y += 1
+			case 1:
+				x += 1
+			case 2:
+				y -= 1
+			case 3:
+				x -= 1
 
-	match facing:
-		case 0:
-			y += int(step[1:])
-		case 1:
-			x += int(step[1:])
-		case 2:
-			y -= int(step[1:])
-		case 3:
-			x -= int(step[1:])
+		coord = (x, y)
 
-	coord = (x, y)
+		if coord in coords:
+			print(abs(x) + abs(y))
+			finished = True
+			break
 
-	if coord in coords:
-		print(sum(coord))
-	coords.add(coord)
+		coords.add(coord)
 
-total = sum(directions[:2]) - sum(directions[2:])
-print(total)
+	if finished:
+		break
