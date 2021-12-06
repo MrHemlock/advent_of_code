@@ -1,11 +1,12 @@
 with open("Day_1_input.txt") as file:
-	parsed = file.read().strip().split(", ")
+	parsed: list[str] = file.read().strip().split(", ")
 
-x = 0
-y = 0
-coords = set((0,0))
-facing = 0
-finished = False
+x: int = 0
+y: int = 0
+coords: set[tuple[int, int]] = set()
+facing: int = 0
+finished: bool = False
+
 for step in parsed:
 	if step[0] == "R":
 		facing = (facing + 1) % 4
@@ -23,7 +24,7 @@ for step in parsed:
 			case 3:
 				x -= 1
 
-		coord = (x, y)
+		coord: tuple[int, int] = (x, y)
 
 		if coord in coords:
 			print(abs(x) + abs(y))

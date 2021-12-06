@@ -5,10 +5,11 @@ description = ""
 authors = ["Your Name <you@example.com>"]
 
 [tool.poetry.dependencies]
-python = ">=3.7,<3.11"
+python = ">=3.10,<3.11"
 numpy = "^1.21.4"
 requests = "^2.26.0"
 python-dotenv = "^0.19.2"
+pyjion = "^1.1.1"
 
 [tool.poetry.dev-dependencies]
 

@@ -34,6 +34,17 @@ optional = false
 python-versions = ">=3.7,<3.11"
 
 [[package]]
+name = "pyjion"
+version = "1.1.1"
+description = "A JIT compiler wrapper for CPython"
+category = "main"
+optional = false
+python-versions = ">=3.10"
+
+[package.extras]
+dis = ["rich", "distorm3"]
+
+[[package]]
 name = "python-dotenv"
 version = "0.19.2"
 description = "Read key-value pairs from a .env file and set them as environment variables"
@@ -77,8 +88,8 @@ socks = ["PySocks (>=1.5.6,!=1.5.7,<2.0)"]
 
 [metadata]
 lock-version = "1.1"
-python-versions = ">=3.7,<3.11"
-content-hash = "cf3f0d4cd10bcc385d3bc37dea7bb34c09f64421826c81462e1ad7abd65829af"
+python-versions = ">=3.10,<3.11"
+content-hash = "26580d9a3057630bf5adc757be1e5fe2968872fd992366e8ecadfc3e212bebf6"
 
 [metadata.files]
 certifi = [
@@ -124,6 +135,13 @@ numpy = [
     {file = "numpy-1.21.4-cp39-cp39-win_amd64.whl", hash = "sha256:e3c3e990274444031482a31280bf48674441e0a5b55ddb168f3a6db3e0c38ec8"},
     {file = "numpy-1.21.4-pp37-pypy37_pp73-manylinux_2_12_x86_64.manylinux2010_x86_64.whl", hash = "sha256:a3deb31bc84f2b42584b8c4001c85d1934dbfb4030827110bc36bfd11509b7bf"},
     {file = "numpy-1.21.4.zip", hash = "sha256:e6c76a87633aa3fa16614b61ccedfae45b91df2767cf097aa9c933932a7ed1e0"},
+]
+pyjion = [
+    {file = "pyjion-1.1.1-cp310-cp310-macosx_10_16_x86_64.whl", hash = "sha256:4ea1359e1f035f3356edc2c9e3e6cd3c176be40b31400d0912ad2e4113019515"},
+    {file = "pyjion-1.1.1-cp310-cp310-macosx_11_0_x86_64.whl", hash = "sha256:99c6dfbc0b72a82993aef89ed5a9e94493e9ee16afa21c67d96fc5900049e044"},
+    {file = "pyjion-1.1.1-cp310-cp310-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:43ab78c879e371cbe47d6d901636d15f93fb5525fe6476aa7d71608303dbd4b0"},
+    {file = "pyjion-1.1.1-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:052603397a44df17bbe90eca7bdd6e1ede1f7ebe3df9a062f777d6af5a3f02dc"},
+    {file = "pyjion-1.1.1-cp310-cp310-win_amd64.whl", hash = "sha256:0ee3b6590b7064bc30ad0fddde1bbec9568e8c343bc871a4867d036d65e62481"},
 ]
 python-dotenv = [
     {file = "python-dotenv-0.19.2.tar.gz", hash = "sha256:a5de49a31e953b45ff2d2fd434bbc2670e8db5273606c1e737cc6b93eff3655f"},
